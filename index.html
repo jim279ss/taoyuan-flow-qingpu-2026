@@ -36,6 +36,18 @@ main{padding:37px 0 48px} .notice{display:flex;gap:14px;align-items:flex-start;p
 .photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:15px 0 2px}.photo-tile{display:block;border-radius:12px;border:1px solid #dde5ee;overflow:hidden;color:inherit;text-decoration:none;background:#f9fafc;transition:transform .15s,box-shadow .15s}.photo-tile:hover{transform:translateY(-2px);box-shadow:0 7px 19px #0a29401e}.photo-tile img{display:block;width:100%;height:125px;object-fit:cover;background:#e8eef2}.photo-copy{display:block;padding:9px 10px 11px}.photo-copy strong{display:block;font-size:12px;line-height:1.5;color:#24435a}.photo-copy small{display:block;margin-top:4px;color:#6d7b8a;line-height:1.45;font-size:11px}.photo-grid:has(>.photo-tile:only-child){grid-template-columns:minmax(0,330px)}.photo-grid:has(>.photo-tile:only-child) .photo-tile img{height:180px}.photo-grid:has(>.photo-tile:nth-child(4)){grid-template-columns:repeat(2,minmax(0,1fr))}.photo-grid:has(>.photo-tile:nth-child(4)) img{height:156px}.photo-note{font-size:11px!important;color:#8997a6!important;margin:5px 0 0!important}.link-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:9px 0 0}.nav-mini{padding:5px 10px;font-size:12px;border-radius:8px}.address-mini{font-size:11px;color:#7890a0}.extra-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}.extra-links a{color:#12859a;font-size:11px}.night-tip{font-size:12px!important;color:#9f4a75!important;margin-top:9px!important}.quicknav-grid{display:grid;grid-template-columns:1fr;gap:6px}.quicknav .btn{justify-content:space-between;text-align:left}.stop-card .inline-link{margin-top:14px}
 @media(max-width:870px){.map-tags{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:580px){.map-card{padding:5px}.map-card img{min-height:210px}.map-head{display:block}.map-head>.btn{margin-top:12px}.photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.photo-tile img,.photo-grid:has(>.photo-tile:nth-child(4)) img{height:105px}.photo-grid:has(>.photo-tile:only-child){grid-template-columns:1fr}.photo-grid:has(>.photo-tile:only-child) img{height:180px}.photo-copy{padding:8px}.photo-copy small{font-size:10px}.photo-grid:has(>.photo-tile:nth-child(3):last-child) .photo-tile:last-child{grid-column:1/-1}.map-tags span{font-size:11px;padding:10px}}
 @media print{.photo-grid{grid-template-columns:repeat(3,1fr)}.map-card img{max-height:340px}.map-tags{grid-template-columns:repeat(4,1fr)}.stop{break-inside:avoid}.photo-tile img{height:100px}}
+
+/* 2026/10/11 停車一次方案 */
+.parking-plan{margin:0 0 34px;scroll-margin-top:85px}
+.parking-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.parking-choice{background:#fff;border:1px solid #dbe6ed;border-radius:18px;padding:22px;box-shadow:var(--shadow)}
+.parking-choice.recommended{border:2px solid #1b9fb0}
+.parking-choice h3{font-size:19px;color:#163b58;margin:8px 0}
+.parking-choice p{font-size:14px;color:#536578;line-height:1.8}
+.parking-tag{background:#eaf7f9;color:#117f91;border-radius:20px;padding:4px 10px;font-weight:800;font-size:12px}
+.parking-flow{background:#f0f7fb;color:#315670;padding:15px 18px;border-radius:13px;font-size:14px;line-height:1.9;margin-top:15px}
+.parking-alert{margin:13px 3px 0;color:#814b2c;font-size:13px;line-height:1.8}
+@media(max-width:760px){.parking-grid{grid-template-columns:1fr}.parking-choice{padding:17px}}
 </style>
 <meta content="2026 桃園流・青埔一日遊｜10/11 汐止出發" property="og:title"/><meta content="青埔 A1–A14 展場照片與官方介紹、精準地圖、行程時間表、城市之鏡光雕＋弦樂。" property="og:description"/><meta content="website" property="og:type"/><meta content="https://storage.googleapis.com/tdri/designexpo/2026/exhibition_pic/image/485/thumb_image_4575c5.jpg" property="og:image"/></head>
 <body>
@@ -48,7 +60,7 @@ main{padding:37px 0 48px} .notice{display:flex;gap:14px;align-items:flex-start;p
 </div>
 <aside class="hero-panel"><div class="tiny">TRIP DATE · 展期最後一天</div><div class="day">10.11 <small>SUN / 週日</small></div><div style="font-size:14px;color:#e1eaf5">2026 年｜從新北汐止出發</div><div class="hl"><span>出發時間</span><b>10:00</b></div><div class="hl"><span>主展館最後入場</span><b>17:30</b></div><div class="hl"><span>夜間演出首場</span><b>19:00</b></div></aside>
 </div></header>
-<nav class="topnav"><div class="wrap navinner"><div class="navlinks"><a href="#plan">時間行程</a><a href="#exhibition-map">青埔展場地圖</a><a href="#notes">交通提醒</a><a href="#sources">資料來源</a></div><div class="actions"><button class="btn" id="copyBtn" type="button">複製行程</button><button class="btn primary" onclick="window.print()" type="button">列印／存成 PDF</button></div></div></nav>
+<nav class="topnav"><div class="wrap navinner"><div class="navlinks"><a href="#plan">時間行程</a><a href="#parking-plan">停車與捷運</a><a href="#exhibition-map">青埔展場地圖</a><a href="#notes">交通提醒</a><a href="#sources">資料來源</a></div><div class="actions"><button class="btn" id="copyBtn" type="button">複製行程</button><button class="btn primary" onclick="window.print()" type="button">列印／存成 PDF</button></div></div></nav>
 <main class="wrap">
 <section aria-label="重要提醒" class="notice"><div class="alert">!</div><div><strong>10/11 為 2026 台灣設計展最後一天，主展館只開放到 18:00。</strong><p>主展館最後入場 17:30；晚間《城市之鏡》位於「桃園市立美術館戶外空間」，不是會展中心裡面。夜間光雕 19:00、19:30、20:00、20:30 各一場，10/11 為現場弦樂限定版。</p></div></section>
 <section aria-label="行程摘要" class="overview"><div class="metric"><div class="label">出發</div><b>10:00</b><div class="extra">新北・汐止</div></div><div class="metric"><div class="label">重點區域</div><b>青埔</b><div class="extra">會展中心＋鄰近展場</div></div><div class="metric em"><div class="label">壓軸表演</div><b>19:00</b><div class="extra">光雕・現場弦樂</div></div><div class="metric"><div class="label">建議返程</div><b>20:15</b><div class="extra">依車流彈性調整</div></div></section><section aria-label="青埔展區官方地圖" class="map-section" id="exhibition-map">
@@ -58,16 +70,30 @@ main{padding:37px 0 48px} .notice{display:flex;gap:14px;align-items:flex-start;p
 <div class="map-tags"><span><b>A1–A13</b> 桃園會展中心｜白天主展</span><span><b>A14</b> 青埔智慧科技分館 3F｜可選</span><span><b>D9</b> 硬桃派市集｜環溪一街</span><span><b>C1</b> 桃美館戶外｜夜間光雕</span></div>
 <p class="map-disclaimer">此圖是官方「青埔展區場館分布圖」，非會展中心室內樓層平面圖；室內各展項實際動線請依現場指標。<a href="https://designexpo.org.tw/designexpo/zh-TW/visit" rel="noopener noreferrer" target="_blank">前往官方完整展區地圖 ↗</a></p>
 </section>
+<section class="parking-plan" id="parking-plan" aria-label="單次停車與捷運方案">
+<div class="section-head"><div><span class="section-kicker">PARK ONCE · WALK OR MRT</span><h2>只停一次車｜兩種選擇</h2><p class="sect-note">三個景點都在 A19 桃園體育園區站周邊，不需要為了景點之間移動搭捷運。</p></div></div>
+<div class="parking-grid">
+<article class="parking-choice recommended"><span class="parking-tag">便利首選</span><h3>A19 環球購物中心・地下停車場</h3><p>約 443 格。桃園市觀光局刊載每小時 40 元；商場消費滿 500 元可折抵 1 小時，最多折 4 小時（費率以現場為準）。</p><p>停車入口位於<strong>領航北路一段</strong>；地圖上的商場地址是高鐵南路二段 352 號，請依地下停車場車道指標，不要停在商場正門。</p>
+<a class="btn primary" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%92%B0%E7%90%83%E8%B3%BC%E7%89%A9%E4%B8%AD%E5%BF%83%20%E6%A1%83%E5%9C%92A19%20%E5%95%86%E5%A0%B4%E5%81%9C%E8%BB%8A%E5%A0%B4" rel="noopener noreferrer" target="_blank">停車場地圖定位 ↗</a>
+</article>
+<article class="parking-choice"><span class="parking-tag">節省停車費</span><h3>A20 興南站・展覽免費停車場</h3><p>設計展官方另列 A20 東側 600 格、西側 500 格<strong>免費停車場</strong>，搭機捷 <strong>A20 ⇄ A19 一站</strong>到青埔觀展。</p><p>注意：這是<strong>展覽官方標示的東、西側免費場</strong>，不是 A20 捷運站自己的收費轉乘停車場。導航先到 A20 車站附近，再依現場免費場路標；夜間進出請以現場公告為準。</p>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%A1%83%E5%9C%92%E6%8D%B7%E9%81%8BA20%E8%88%88%E5%8D%97%E7%AB%99" rel="noopener noreferrer" target="_blank">A20 車站地圖（非免費車場定位）↗</a>
+</article>
+</div>
+<div class="parking-flow"><strong>A19 停車方案：</strong> 停車 → 步行到會展中心／智慧科技分館 → 步行至市集 → 步行到桃美館戶外看光雕 → 步行回停車場取車。<br/>
+<strong>A20 省錢方案：</strong> A20 免費停車 → 機捷至 A19 → 青埔各景點步行 → A19 搭機捷回 A20 取車。</div>
+<p class="parking-alert">10/11 周邊永園路、環溪一街、文德路等路段有交通管制；請不要把光雕場地當成開車導航的停車目的地。<a href="https://tour.tycg.gov.tw/zh-tw/event/newsdetail/7045" target="_blank" rel="noopener noreferrer">桃園市政府管制公告 ↗</a></p>
+</section>
 <div class="layout"><div>
-<section id="plan"><div class="section-head"><div><h2>一日遊行程表</h2><p class="sect-note">以自行開車為預設。時間為建議安排，非保證到達時刻。</p></div><button aria-pressed="false" class="small-action" id="optionalBtn" type="button">隱藏可選行程</button></div>
+<section id="plan"><div class="section-head"><div><h2>一日遊行程表</h2><p class="sect-note">自駕只停一次車；白天與晚間在 A19 周邊步行，不必移車。時間為建議安排。</p></div><button aria-pressed="false" class="small-action" id="optionalBtn" type="button">隱藏可選行程</button></div>
 <div class="timeline">
 <article class="stop" data-required="true" id="stop-1">
 <div class="dot"><span></span></div>
 <div class="stop-time"><b>10:00</b><span>11:15</span></div>
 <div class="stop-card">
 <div class="stop-head"><span class="kind">交通</span> <label class="done-check"><input aria-label="標記行程1已完成" class="task-check" data-key="stop-1" type="checkbox"/><span>完成</span></label></div>
-<h3>汐止出發 → 青埔</h3><p class="subtitle">約 60–90 分鐘（估計）・導航請以即時定位為準</p><p>以桃園會展中心為第一站；國慶連假最後一天可能壅塞，抵達後先停車。</p>
-<a class="inline-link" href="https://maps.app.goo.gl/fSKR7vMWaavnUP4p7" rel="noopener noreferrer" target="_blank">官方地圖定位 ↗</a><div class="link-row"><a class="btn nav-mini" href="https://www.google.com/maps/dir/?api=1&amp;destination=%E6%A1%83%E5%9C%92%E5%B8%82%E4%B8%AD%E5%A3%A2%E5%8D%80%E9%A0%98%E8%88%AA%E5%8C%97%E8%B7%AF%E4%B8%80%E6%AE%B599%E8%99%9F&amp;travelmode=driving" rel="noopener noreferrer" target="_blank">開始導航 ↗</a><span class="address-mini">桃園市中壢區領航北路一段99號</span></div>
+<h3>汐止出發 → 青埔</h3><p class="subtitle">約 60–90 分鐘（估計）・導航請以即時定位為準</p><p>先把車停在 A19 環球購物中心商場附設停車場，停一次到晚上；停車入口在領航北路一段。想省停車費也可考慮 A20 展覽免費停車場，搭機捷一站到 A19。</p>
+<a class="inline-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%92%B0%E7%90%83%E8%B3%BC%E7%89%A9%E4%B8%AD%E5%BF%83%20%E6%A1%83%E5%9C%92A19%20%E5%95%86%E5%A0%B4%E5%81%9C%E8%BB%8A%E5%A0%B4" rel="noopener noreferrer" target="_blank">A19 商場停車場定位 ↗</a><div class="link-row"><a class="btn nav-mini" href="https://www.google.com/maps/dir/?api=1&amp;destination=%E6%A1%83%E5%9C%92%E5%B8%82%E4%B8%AD%E5%A3%A2%E5%8D%80%E9%AB%98%E9%90%B5%E5%8D%97%E8%B7%AF%E4%BA%8C%E6%AE%B5352%E8%99%9F&amp;travelmode=driving" rel="noopener noreferrer" target="_blank">開始導航 ↗</a><span class="address-mini">桃園市中壢區高鐵南路二段352號（車道入口見領航北路一段指標）</span></div>
 </div>
 </article><article class="stop" data-required="true" id="stop-2">
 <div class="dot"><span></span></div>
@@ -114,8 +140,8 @@ main{padding:37px 0 48px} .notice{display:flex;gap:14px;align-items:flex-start;p
 <div class="stop-time"><b>17:35</b><span>18:25</span></div>
 <div class="stop-card">
 <div class="stop-head"><span class="kind">交通</span> <label class="done-check"><input aria-label="標記行程7已完成" class="task-check" data-key="stop-7" type="checkbox"/><span>完成</span></label></div>
-<h3>前往桃園市立美術館戶外空間</h3><p class="subtitle">由會展中心移動、尋找停車位</p><p>建議 18:30 前抵達附近並步行至戶外展場。光雕在桃美館戶外，不是進入館舍。美術館前文德路於展演期間禁止停車，可能有交通管制；請先找周邊停車場。</p>
-<a class="inline-link" href="https://maps.app.goo.gl/81KXqaGHE716VXNv9" rel="noopener noreferrer" target="_blank">官方地圖定位 ↗</a><div class="link-row"><a class="btn nav-mini" href="https://www.google.com/maps/dir/?api=1&amp;destination=%E6%A1%83%E5%9C%92%E5%B8%82%E4%B8%AD%E5%A3%A2%E5%8D%80%E9%AB%98%E9%90%B5%E5%8D%97%E8%B7%AF%E4%BA%8C%E6%AE%B577%E8%99%9F&amp;travelmode=driving" rel="noopener noreferrer" target="_blank">開始導航 ↗</a><span class="address-mini">桃園市中壢區高鐵南路二段77號</span></div>
+<h3>前往桃園市立美術館戶外空間</h3><p class="subtitle">同一個 A19 生活圈・步行就能到</p><p>不用移車，也不用為這一小段搭捷運。從會展中心／市集步行到桃園市立美術館戶外空間，預留 15–25 分鐘，18:30 前到場。文德路有管制，依現場行人指引進入戶外光雕區。</p>
+<a class="inline-link" href="https://maps.app.goo.gl/81KXqaGHE716VXNv9" rel="noopener noreferrer" target="_blank">官方地圖定位 ↗</a><div class="link-row"><a class="btn nav-mini" href="https://www.google.com/maps/dir/?api=1&amp;destination=%E6%A1%83%E5%9C%92%E5%B8%82%E4%B8%AD%E5%A3%A2%E5%8D%80%E9%AB%98%E9%90%B5%E5%8D%97%E8%B7%AF%E4%BA%8C%E6%AE%B577%E8%99%9F&amp;travelmode=walking" rel="noopener noreferrer" target="_blank">步行導航 ↗</a><span class="address-mini">桃園市中壢區高鐵南路二段77號</span></div>
 </div>
 </article><article class="stop" data-required="true" id="stop-8">
 <div class="dot"><span></span></div>
@@ -138,15 +164,18 @@ main{padding:37px 0 48px} .notice{display:flex;gap:14px;align-items:flex-start;p
 <div class="stop-time"><b>20:15</b><span>21:30</span></div>
 <div class="stop-card">
 <div class="stop-head"><span class="kind">交通</span> <label class="done-check"><input aria-label="標記行程10已完成" class="task-check" data-key="stop-10" type="checkbox"/><span>完成</span></label></div>
-<h3>離開青埔 → 返回汐止</h3><p class="subtitle">返程約 60–90 分鐘（估計）</p><p>實際回程時間視國道壅塞與停車位置。若觀看 20:30 最末場，返家時間需順延。</p>
-<a class="inline-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=%E6%96%B0%E5%8C%97%E5%B8%82%E6%B1%90%E6%AD%A2%E5%8D%80&amp;travelmode=driving" rel="noopener noreferrer" target="_blank">導航回汐止區 ↗</a>
+<h3>離開青埔 → 返回汐止</h3><p class="subtitle">先步行取車，再開回汐止</p><p>從《城市之鏡》沿行人動線步行回 A19 環球商場停車場取車（約 6–10 分鐘）；若選 A20 方案，從 A19 乘機捷一站回 A20 取車。取車後再導航返回汐止。若觀看 20:30 末場，返家時間順延。</p>
+<a class="inline-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=%E6%A1%83%E5%9C%92%E5%B8%82%E4%B8%AD%E5%A3%A2%E5%8D%80%E9%AB%98%E9%90%B5%E5%8D%97%E8%B7%AF%E4%BA%8C%E6%AE%B5352%E8%99%9F&amp;travelmode=walking" rel="noopener noreferrer" target="_blank">步行回 A19 停車場 ↗</a> ｜ <a class="inline-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=%E6%96%B0%E5%8C%97%E5%B8%82%E6%B1%90%E6%AD%A2%E5%8D%80&amp;travelmode=driving" rel="noopener noreferrer" target="_blank">導航回汐止區 ↗</a>
 </div>
 </article>
 </div></section></div>
 <aside class="side" id="notes"><section class="panel quicknav"><h3>精準地點導覽</h3><p>以下「官方定位」直接取自各展項官網，不再以地點文字混合猜測。</p><div class="quicknav-grid"><a class="btn" href="https://maps.app.goo.gl/fSKR7vMWaavnUP4p7" rel="noopener noreferrer" target="_blank">桃園會展中心 <span>↗</span></a><a class="btn" href="https://maps.app.goo.gl/EFqW4N6Ykdp71WjN6" rel="noopener noreferrer" target="_blank">青埔智慧科技分館 <span>↗</span></a><a class="btn" href="https://maps.app.goo.gl/3FFowYHTkYaKwYo19" rel="noopener noreferrer" target="_blank">硬桃派市集（環溪一街） <span>↗</span></a><a class="btn" href="https://maps.app.goo.gl/81KXqaGHE716VXNv9" rel="noopener noreferrer" target="_blank">桃園市立美術館戶外空間 <span>↗</span></a></div><p class="hint">導航開啟後請確認地圖標記及當日車輛管制；尤其桃美館文德路不能停車。</p></section>
 <section class="panel night-panel"><h3>今晚重點：城市之鏡</h3><p>桃園市立美術館戶外空間<br/>高鐵南路二段 77 號</p><div class="showtimes"><span>19:00</span><span>19:30</span><span>20:00</span><span>20:30</span></div><p class="hint">10/10～10/11 的「SS Evolution — Live Version」結合現場弦樂演奏。建議 18:30 前抵達，先看第一場。</p><div class="side-btns"><a class="btn" href="https://maps.app.goo.gl/81KXqaGHE716VXNv9" rel="noopener" target="_blank">官方光雕定位 ↗</a><a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=%E6%A1%83%E5%9C%92%E5%B8%82%E4%B8%AD%E5%A3%A2%E5%8D%80%E9%AB%98%E9%90%B5%E5%8D%97%E8%B7%AF%E4%BA%8C%E6%AE%B577%E8%99%9F&amp;travelmode=driving" rel="noopener noreferrer" target="_blank">導航至桃美館周邊（勿停文德路） ↗</a></div></section>
 <section class="panel"><h3>行程完成進度</h3><div aria-label="進度條" class="progress"><i id="bar"></i></div><div class="progress-label" id="progressText">已完成 0 / 10 項</div><p class="hint">可勾選已完成的行程，瀏覽器會記住勾選狀態。</p></section>
-<section class="panel"><h3>自行開車與停車</h3><p>從汐止出發，先導航至桃園會展中心；建議預抓 60–90 分鐘車程，國慶連假以即時路況為準。</p><ul><li><strong>文智停車場：</strong>官方列為免費停車場，約 400 席。</li><li><strong>嘟嘟房桃園會展中心：</strong>收費停車場，約 700 席。</li><li>晚間移動至桃美館時，請重新確認周邊停車位與交通管制。</li></ul><div class="side-btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%87%E6%99%BA%E5%81%9C%E8%BB%8A%E5%A0%B4%20%E6%A1%83%E5%9C%92%E4%B8%AD%E5%A3%A2" rel="noopener noreferrer" target="_blank">文智停車場 <span>↗</span></a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%98%9F%E5%98%9F%E6%88%BF%E6%A1%83%E5%9C%92%E6%9C%83%E5%B1%95%E4%B8%AD%E5%BF%83%E5%81%9C%E8%BB%8A%E5%A0%B4" rel="noopener noreferrer" target="_blank">會展中心停車場 <span>↗</span></a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%A1%83%E5%9C%92%E5%B8%82%E7%AB%8B%E7%BE%8E%E8%A1%93%E9%A4%A8%20%E9%99%84%E8%BF%91%E5%81%9C%E8%BB%8A%E5%A0%B4" rel="noopener noreferrer" target="_blank">桃美館附近停車 <span>↗</span></a></div></section>
+<section class="panel"><h3>自行開車、停車與捷運</h3>
+<p>全程<strong>只停一次車</strong>。最方便選 A19 環球購物中心商場停車場（領航北路一段車道），三個主要場地皆可步行，沒有必要把車移往桃美館。</p>
+<ul><li><strong>A19 環球：</strong>約 443 格，每小時 40 元，商場消費折抵以現場公告為準。</li><li><strong>A20 東／西側展覽免費停車場：</strong>共 1,100 格，搭機捷 A20 ⇄ A19 一站；勿誤入收費的站體停車場。</li><li><strong>會展中心嘟嘟房：</strong>約 700 格，可作 A19 替代。</li><li>今日有部分道路管制，請確認車道入口與現場標示。</li></ul>
+<div class="side-btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%92%B0%E7%90%83%E8%B3%BC%E7%89%A9%E4%B8%AD%E5%BF%83%20%E6%A1%83%E5%9C%92A19%20%E5%95%86%E5%A0%B4%E5%81%9C%E8%BB%8A%E5%A0%B4" rel="noopener noreferrer" target="_blank">A19 商場停車 <span>↗</span></a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%A1%83%E5%9C%92%E6%8D%B7%E9%81%8BA20%E8%88%88%E5%8D%97%E7%AB%99" rel="noopener noreferrer" target="_blank">A20 捷運站位置 <span>↗</span></a><a class="btn" href="#parking-plan">完整單次停車方案 <span>↑</span></a></div></section>
 <section class="panel"><h3>搭大眾運輸（替代方案）</h3><p>汐止搭臺鐵進台北市區，再轉機場捷運至 <strong>A19 桃園體育園區站</strong>；從 1 號出口步行約 6 分鐘到桃園會展中心。</p><p class="hint">轉乘時間會影響 11:15 抵達的安排，若不開車，請以當日班次重新估算去程。此頁時刻表以自駕方案為主。</p><div class="side-btns"><a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;origin=%E6%B1%90%E6%AD%A2%E8%BB%8A%E7%AB%99&amp;destination=%E6%A1%83%E5%9C%92%E6%9C%83%E5%B1%95%E4%B8%AD%E5%BF%83&amp;travelmode=transit" rel="noopener" target="_blank">查詢大眾運輸 <span>↗</span></a></div></section>
 </aside></div>
 <section id="sources" style="margin-top:36px"><div class="section-head"><div><h2>查證來源與注意事項</h2><p class="sect-note">時段、展出內容及停車場資訊以 2026/10/11 出發前的官方公告及現場為準。</p></div></div>
